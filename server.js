@@ -13,32 +13,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // http service
 var port = 3128;
 
-// function readJSONFile(filename, callback) {
-//   fs.readFile(filename, function (err, data) {
-//     if (err) {
-//       callback(err);
-//       return;
-//     }
-//     try {
-//       callback(null, JSON.parse(data));
-//     } catch (exception) {
-//       callback(exception);
-//     }
-//   });
-// }
-
-// readJSONFile("./data/selfreporting.json", function (err, json) {
-//   if (err) {
-//     throw err;
-//   }
-//   console.log(json);
-// });
-
-// app.get("/test", (req, res) => {
-//   // res.setHeader("Access-Control-Allow-Origin", "https://zunym.github.io/apiserver/");
-//   res.send(readJSONFile());
-// });
-
 const dataPath = "./data/selfreporting.json";
 
 // READ
@@ -53,19 +27,13 @@ app.get("/data", (req, res) => {
 });
 
 app.get("/hello", (req, res) => {
-  res.setHeader(
-    "Access-Control-Allow-Origin",
-    "https://zunym.github.io/apiserver/"
-  );
+  // res.setHeader("Access-Control-Allow-Origin", "https://eclipz.pok.ibm.com");
   // res.send("hello world");
   res.json({ message: "hello world" });
 });
 
 app.post("/status", (req, res) => {
-  res.setHeader(
-    "Access-Control-Allow-Origin",
-    "https://zunym.github.io/apiserver/"
-  );
+  // res.setHeader("Access-Control-Allow-Origin", "https://eclipz.pok.ibm.com");
   const date = req.body.date;
   const time = req.body.time;
   const system_name = req.body.system_name;
@@ -108,19 +76,23 @@ app.post("/status", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.setHeader(
-    "Access-Control-Allow-Origin",
-    "https://zunym.github.io/apiserver/"
-  );
-  res.writeHead(200, { "Content-Type": "text/html" });
-  fs.readFile("./index.html", null, function (err, data) {
+  // res.setHeader("Access-Control-Allow-Origin", "https://eclipz.pok.ibm.com");
+  // res.writeHead(200, { "Content-Type": "text/html" });
+  // fs.readFile("./index.html", null, function (err, data) {
+  //   if (err) {
+  //     res.writeHead(404);
+  //     res.write("File Not Found");
+  //   } else {
+  //     res.write(data);
+  //   }
+  //   res.end();
+  // });
+  fs.readFile(dataPath, "utf8", (err, data) => {
     if (err) {
-      res.writeHead(404);
-      res.write("File Not Found");
-    } else {
-      res.write(data);
+      throw err;
     }
-    res.end();
+
+    res.send(JSON.parse(data));
   });
 });
 
