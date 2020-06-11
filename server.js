@@ -35,7 +35,7 @@ var port = 3128;
 // });
 
 // app.get("/test", (req, res) => {
-//   // res.setHeader("Access-Control-Allow-Origin", "https://eclipz.pok.ibm.com");
+//   // res.setHeader("Access-Control-Allow-Origin", "https://zunym.github.io/apiserver/");
 //   res.send(readJSONFile());
 // });
 
@@ -53,11 +53,19 @@ app.get("/data", (req, res) => {
 });
 
 app.get("/hello", (req, res) => {
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://zunym.github.io/apiserver/"
+  );
   // res.send("hello world");
   res.json({ message: "hello world" });
 });
 
 app.post("/status", (req, res) => {
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://zunym.github.io/apiserver/"
+  );
   const date = req.body.date;
   const time = req.body.time;
   const system_name = req.body.system_name;
@@ -100,6 +108,10 @@ app.post("/status", (req, res) => {
 });
 
 app.get("/", (req, res) => {
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://zunym.github.io/apiserver/"
+  );
   res.writeHead(200, { "Content-Type": "text/html" });
   fs.readFile("./index.html", null, function (err, data) {
     if (err) {
