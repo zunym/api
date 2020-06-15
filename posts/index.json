@@ -1,23 +1,55 @@
 {
-  "2020-04-01 13:33:34.855316": {
+  "1": {
     "messages": [
       "ActivateGDS on 04-01-20 10:39:56:98 REFCODE: E16A4A56 5D7DADA3 00",
       "ActivateGDS on 04-01-20 10:39:57:05 REFCODE: E16A4A58 49A6CCDB 00"
     ],
-    "system": "TBUV2"
+    "system": "TBUV2",
+    "date": "2020-04-01",
+    "time": "13:33:34.855316"
   },
-  "2020-04-01 13:33:35.087166": {
+  "2": {
     "messages": [
       "ActivateGDS on 04-01-20 10:48:50:56 REFCODE: E16A4A56 5D7DADA3 00",
       "ActivateGDS on 04-01-20 10:48:50:63 REFCODE: E16A4A58 49A6CCDB 00"
     ],
-    "system": "TBUV2"
+    "system": "TBUV2",
+    "date": "2020-04-01",
+    "time": "13:33:35.087166"
   },
-  "2020-04-07 22:30:25.626793": {
+  "3": {
     "messages": [
-      "HOT_IML> on 04-07-20 22:29:49:76 ",
-      "HOT_IML< on 04-07-20 22:30:05:22 "
+      "SEACTCOMP on 04-01-20 10:54:00:51 REFCODE: LINUX1B",
+      "ActivateGDS on 04-01-20 10:54:00:69 REFCODE: E16A4A57 D083CC5C 00"
     ],
-    "system": "T03"
+    "system": "TBUV2",
+    "date": "2020-04-01",
+    "time": "13:33:35.323414"
+  },
+  "4": {
+    "messages": ["HOM_IMLSTATE on 04-01-20 13:31:54:21 "],
+    "system": "T87",
+    "date": "2020-04-01",
+    "time": "13:36:37.066399"
+  },
+  "5": {
+    "messages": [
+      "IPLSTART J70  on 04-01-20 13:46:00:63 REFCODE: (9a03)",
+      "*IPL_GOOD J70  on 04-01-20 13:46:04:55 "
+    ],
+    "system": "T92",
+    "date": "2020-04-01",
+    "time": "13:50:42.006142"
+  },
+  "6": {
+    "messages": [
+      "IPLSTART J60  on 04-01-20 14:04:37:21 REFCODE: (9a03)",
+      "*IPL_GOOD J60  on 04-01-20 14:04:40:29 ",
+      "IPLSTART J70  on 04-01-20 14:04:44:37 REFCODE: (9a03)",
+      "*IPL_GOOD J70  on 04-01-20 14:04:47:57 "
+    ],
+    "system": "T113",
+    "date": "2020-04-01",
+    "time": "14:10:56.252192"
   }
 }
